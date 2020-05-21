@@ -10,5 +10,9 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="E:/apache-tomcat-9.0.30/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="E:/apache-tomcat-9.0.30/lib/servlet-api.jar" sourcepath="C:/Program Files/Java/jdk1.8.0_211/jre/lib/apache-tomcat-9.0.31-src"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.5.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-dbutils-1.6.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mchange-commons-java-0.2.19.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.48.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
