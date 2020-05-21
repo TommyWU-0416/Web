@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean regist(User user) {
 		// 1.根据用户名查询用户对象
+		System.out.println("regist");
 		User u = userDao.findByUsername(user.getUsername());
 		// 判断u是否为null
 		if (u != null) {
@@ -28,17 +29,17 @@ public class UserServiceImpl implements UserService {
 		}
 		// 2.保存用户信息
 		// 2.1设置激活码，唯一字符串
-		user.setCode(UuidUtil.getUuid());
-		// 2.2设置激活状态
-		user.setStatus("N");
-		userDao.save(user);
-
-		// 3.激活邮件发送，邮件正文？
-
-		String content = "<a href='http://localhost:8080/travel/activeUserServlet?code=" + user.getCode()
-				+ "'>點擊激活【黑馬旅遊網】</a>";
-
-		MailUtils.sendMail(user.getEmail(), content, "激活郵件");
+//		user.setCode(UuidUtil.getUuid());
+//		// 2.2设置激活状态
+//		user.setStatus("N");
+//		userDao.save(user);
+//
+//		// 3.激活邮件发送，邮件正文？
+//
+//		String content = "<a href='http://localhost:8080/travel/activeUserServlet?code=" + user.getCode()
+//				+ "'>點擊激活【黑馬旅遊網】</a>";
+//
+//		MailUtils.sendMail(user.getEmail(), content, "激活郵件");
 
 		return true;
 	}
