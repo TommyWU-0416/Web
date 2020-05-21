@@ -1,11 +1,8 @@
 ﻿package com.awesome.web.servlet;
 
-import com.awesome.domain.ResultInfo;
-import com.awesome.domain.User;
-import com.awesome.service.UserService;
-import com.awesome.service.impl.UserServiceImpl;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,9 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
+
+import org.apache.commons.beanutils.BeanUtils;
+
+import com.awesome.domain.ResultInfo;
+import com.awesome.domain.User;
+import com.awesome.service.UserService;
+import com.awesome.service.impl.UserServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet("/registUserServlet")
 public class RegistUserServlet extends HttpServlet {

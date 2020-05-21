@@ -12,7 +12,7 @@ public final class MailUtils {
 //    String host = "smtp.gmail.com";
 //    int port = 587;
     private static final String USER = "tommy111811@gmail.com"; // 发件人称号，同邮箱地址
-    private static final String PASSWORD = "2U4u au/6"; // 如果是qq邮箱可以使户端授权码，或者登录密码
+    private static final String PASSWORD = "*"; // 如果是qq邮箱可以使户端授权码，或者登录密码
 
     /**
      *

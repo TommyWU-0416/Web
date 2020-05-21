@@ -1,20 +1,13 @@
-﻿package cn.itcast.travel.dao.impl;
+﻿package com.awesome.dao.impl;
 
-import cn.itcast.travel.dao.UserDao;
-import cn.itcast.travel.domain.User;
-import cn.itcast.travel.util.JDBCUtils;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-
+import com.awesome.dao.UserDao;
+import com.awesome.domain.User;
+import com.awesome.util.JDBCUtils;
 
 public class UserDaoImpl implements UserDao {
 
