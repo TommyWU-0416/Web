@@ -3,7 +3,7 @@
 import java.util.UUID;
 
 /**
- * 产生UUID随机字符串工具类
+ * 產生UUID隨機字符串工具類
  */
 public final class UuidUtil {
 	private UuidUtil(){}
@@ -11,7 +11,7 @@ public final class UuidUtil {
 		return UUID.randomUUID().toString().replace("-","");
 	}
 	/**
-	 * 测试
+	 * 測試
 	 */
 	public static void main(String[] args) {
 		System.out.println(UuidUtil.getUuid());

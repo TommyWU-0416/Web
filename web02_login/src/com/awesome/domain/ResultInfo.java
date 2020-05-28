@@ -3,21 +3,21 @@
 import java.io.Serializable;
 
 /**
- * 用于封装后端返回前端数据对象
+ * 用於封裝後端返回前端數據對象 
  */
 public class ResultInfo implements Serializable {
-    private boolean flag;//后端返回结果正常为true，发生异常返回false
-    private Object data;//后端返回结果数据对象
-    private String errorMsg;//发生异常的错误消息
+    private boolean flag;	//後端返回結果正常為true，異常則返回false
+    private Object data;	//後端返回結果數據對象
+    private String errorMsg;//發生異常的錯誤信息
 
-    //无参构造方法
+    // 無參數構造方法
     public ResultInfo() {
     }
     public ResultInfo(boolean flag) {
         this.flag = flag;
     }
     /**
-     * 有参构造方法
+     * 有參數構造方法
      * @param flag
      * @param errorMsg
      */
@@ -26,7 +26,7 @@ public class ResultInfo implements Serializable {
         this.errorMsg = errorMsg;
     }
     /**
-     * 有参构造方法
+     * 有參數構造方法
      * @param flag
      * @param data
      * @param errorMsg

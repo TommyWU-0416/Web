@@ -11,68 +11,67 @@ public class UserServiceImpl implements UserService {
 
 	private UserDao userDao = new UserDaoImpl();
 
-	/**
-	 * 注册用户
-	 * 
-	 * @param user
-	 * @return
-	 */
-	@Override
-	public boolean regist(User user) {
-		// 1.根据用户名查询用户对象
-		System.out.println("regist");
-		User u = userDao.findByUsername(user.getUsername());
-		// 判断u是否为null
-		if (u != null) {
-			// 用户名存在，注册失败
-			return false;
-		}
-		// 2.保存用户信息
-		// 2.1设置激活码，唯一字符串
-//		user.setCode(UuidUtil.getUuid());
-//		// 2.2设置激活状态
-//		user.setStatus("N");
-//		userDao.save(user);
-//
-//		// 3.激活邮件发送，邮件正文？
-//
-//		String content = "<a href='http://localhost:8080/travel/activeUserServlet?code=" + user.getCode()
-//				+ "'>點擊激活【黑馬旅遊網】</a>";
-//
-//		MailUtils.sendMail(user.getEmail(), content, "激活郵件");
+    /**
+     * 註冊用戶
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public boolean regist(User user) {
+        // 1.根據用戶名查詢用戶對象
+        User u = userDao.findByUsername(user.getUsername());
+        // 判斷u是否為null
+        if (u != null) {
+            // 用戶名存在，註冊失敗
+            return false;
+        }
+        // 2.保存用戶信息
+        // 2.1設置激活碼，並且唯一
+        user.setCode(UuidUtil.getUuid());
+        // 2.2設置激活狀態
+        user.setStatus("N");
+        userDao.save(user);
 
-		return true;
-	}
+        // 3.激活郵件發送，郵件正文
 
-	/**
-	 * 激活用户
-	 * 
-	 * @param code
-	 * @return
-	 */
-	@Override
-	public boolean active(String code) {
-		// 1.根据激活码查询用户对象
-		User user = userDao.findByCode(code);
-		if (user != null) {
-			// 2.调用dao的修改激活状态的方法
-			userDao.updateStatus(user);
-			return true;
-		} else {
-			return false;
-		}
+        String content = "<a href='http://localhost:8080/web02_login/activeUserServlet?code=" + user.getCode() + "'>點擊激活【thirdshop】</a>";
 
-	}
+        MailUtils.sendMail(user.getEmail(), content, "激活郵件");
 
-	/**
-	 * 登录方法
-	 * 
-	 * @param user
-	 * @return
-	 */
-	@Override
-	public User login(User user) {
-		return userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
-	}
+        return true;
+    }
+
+    /**
+     * 激活用户
+     *
+     * @param code
+     * @return
+     */
+    @Override
+    public boolean active(String code) {
+        // 1.根據激活碼查詢用戶對象
+        User user = userDao.findByCode(code);
+        if (user != null) {
+            // 2.調用dao修改激活狀態的方法
+            userDao.updateStatus(user);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * 登錄方法
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public User login(User user) {
+
+        return userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+    }
 
 }

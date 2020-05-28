@@ -23,31 +23,31 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class RegistUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        //验证校验
-//        String check = request.getParameter("check");
-//        //从sesion中获取验证码
-//        HttpSession session = request.getSession();
-//        String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
-//        session.removeAttribute("CHECKCODE_SERVER");//为了保证验证码只能使用一次
-//        //比较
-//        if(checkcode_server == null || !checkcode_server.equalsIgnoreCase(check)){
-//            //验证码错误
-//            ResultInfo info = new ResultInfo();
-//            //注册失败
-//            info.setFlag(false);
-//            info.setErrorMsg("驗證碼錯誤");
-//            //将info对象序列化为json
-//            ObjectMapper mapper = new ObjectMapper();
-//            String json = mapper.writeValueAsString(info);
-//            response.setContentType("application/json;charset=utf-8");
-//            response.getWriter().write(json);
-//            return;
-//        }
+        // 校驗驗證碼
+        String check = request.getParameter("check");
+        // 從session中獲取驗證碼
+        HttpSession session = request.getSession();
+        String checkcode_server = (String) session.getAttribute("CHECKCODE_SERVER");
+        session.removeAttribute("CHECKCODE_SERVER");//保證驗證碼只能使用一次
+        // 比較
+        if(checkcode_server == null || !checkcode_server.equalsIgnoreCase(check)){
+            // 驗證碼錯誤
+            ResultInfo info = new ResultInfo();
+            // 註冊失敗
+            info.setFlag(false);
+            info.setErrorMsg("驗證碼錯誤");
+            //将info对象序列化为json
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(info);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(json);
+            return;
+        }
     	
-        //1.获取数据
+        // 1.獲取數據
         Map<String, String[]> map = request.getParameterMap();
         
-        //2.封装对象
+        // 2.封裝對象
         User user = new User();
         try {
             BeanUtils.populate(user,map);
@@ -58,29 +58,29 @@ public class RegistUserServlet extends HttpServlet {
             e.printStackTrace();
         }
         
-        //3.调用service完成注册
+        // 3.調用service完成註冊
         UserService service = new UserServiceImpl();
         boolean flag = service.regist(user);
         ResultInfo info = new ResultInfo();
-        //4.响应结果
+        // 4.響應結果
         if(flag){
-            //注册成功
+        	// 註冊成功
             info.setFlag(true);
-            System.out.println(123);
+            System.out.println("註冊成功");
             
         }else{
-            //注册失败
+        	// 註冊失敗
             info.setFlag(false);
-            info.setErrorMsg("注册失败!");
+            info.setErrorMsg("註冊失敗!");
             
         }
 
-        //将info对象序列化为json
+        // 將info對象序列話為json
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(info);
 
-        //将json数据写回客户端
-        //设置content-type
+        // 將json數據寫回客戶端
+        // 設置content-type
         response.setContentType("application/json;charset=utf-8");
         response.getWriter().write(json);
 

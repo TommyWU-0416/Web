@@ -4,7 +4,7 @@ import com.awesome.domain.User;
 
 public interface UserService {
     /**
-     * 注册用户
+     * 註冊用戶
      * @param user
      * @return
      */

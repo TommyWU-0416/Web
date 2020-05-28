@@ -14,10 +14,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @WebServlet("/findUserServlet")
 public class FindUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //从session中获取登录用户
+        // 從session中獲取登錄用戶
         Object user = request.getSession().getAttribute("user");
-        //将user写回客户端
-
+        
+        // 將user寫回客戶端
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
         mapper.writeValue(response.getOutputStream(),user);

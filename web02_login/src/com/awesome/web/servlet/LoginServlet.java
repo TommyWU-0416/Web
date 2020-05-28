@@ -10,66 +10,68 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.beanutils.BeanUtils;
-
 import com.awesome.domain.ResultInfo;
 import com.awesome.domain.User;
 import com.awesome.service.UserService;
 import com.awesome.service.impl.UserServiceImpl;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.beanutils.BeanUtils;
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// 1.获取用户名和密码数据
-		Map<String, String[]> map = request.getParameterMap();
-		// 2.封装User对象
-		User user = new User();
-		try {
-			BeanUtils.populate(user, map);
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			e.printStackTrace();
-		}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		// 3.调用Service查询
-		UserService service = new UserServiceImpl();
-		User u = service.login(user);
+        // 1.獲取用戶名和密碼
+        Map<String, String[]> map = request.getParameterMap();
 
-		ResultInfo info = new ResultInfo();
+        // 2.封裝對象
+        User user = new User();
+        try {
+            // org.apache.commons.beanutils.BeanUtils
+            // BeanUtils.populate(Object bean, Map properties);
+            // 會把 Map裡面的 key對應的 value給予 bean的屬性
+            // 也就是把 map的值，存給 user,封裝
+            BeanUtils.populate(user, map);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
-		// 4.判断用户对象是否为null
-		if (u == null) {
-			// 用户名密码或错误
-			info.setFlag(false);
-			info.setErrorMsg("用戶名或密碼錯誤");
-		}
-		// 5.判断用户是否激活
-		if (u != null && !"Y".equals(u.getStatus())) {
-			// 用户尚未激活
-			info.setFlag(false);
-			info.setErrorMsg("您尚未激活，請激活");
-		}
-		// 6.判断登录成功
-		if (u != null && "Y".equals(u.getStatus())) {
-			request.getSession().setAttribute("user", u);// 登录成功标记
+        // 3.調用 service檢查是否存在
+        UserService service = new UserServiceImpl();
+        User u = service.login(user);
 
-			// 登录成功
-			info.setFlag(true);
-		}
+        ResultInfo info = new ResultInfo();
 
-		// 响应数据
-		ObjectMapper mapper = new ObjectMapper();
+        // 判斷是否為空，如果註冊失敗就會回空，登入就會有個空值
+        if (u == null) {
+            info.setFlag(false);
+            info.setErrorMsg("用戶名或密碼錯誤");
+        }
+        // 判斷是否激活
+        if (u != null && ("Y".equals(user.getStatus()))) {
+            info.setFlag(false);
+            info.setErrorMsg("激活失敗，請至信箱確認激活信件");
+        }
 
-		response.setContentType("application/json;charset=utf-8");
-		mapper.writeValue(response.getOutputStream(), info);
+        // 判斷登入成功
+        if( u != null && ("Y".equals(u.getStatus()))){
+            // 將數值存到 Session裡面，之後可以使用
+            request.getSession().setAttribute("user", u);
 
-	}
+            info.setFlag(true);
+        }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		this.doPost(request, response);
-	}
+        // 響應數據
+        ObjectMapper mapper = new ObjectMapper();
+
+        response.setContentType("application/json; charset=utf-8");
+        mapper.writeValue(response.getOutputStream(), info);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.doPost(request, response);
+    }
 }

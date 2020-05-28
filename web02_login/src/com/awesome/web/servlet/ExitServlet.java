@@ -10,10 +10,10 @@ import java.io.IOException;
 @WebServlet("/exitServlet")
 public class ExitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1.销毁session
+        // 1.銷毀session
         request.getSession().invalidate();
 
-        //2.跳转登录页面
+        // 2.跳轉到登錄頁面
         response.sendRedirect(request.getContextPath()+"/login.html");
     }
 

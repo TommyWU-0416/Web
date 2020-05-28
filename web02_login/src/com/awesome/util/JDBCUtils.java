@@ -12,24 +12,25 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /*
-	1. 声明静态数据源成员变量
-	2. 创建连接池对象
-	3. 定义公有的得到数据源的方法
-	4. 定义得到连接对象的方法
-	5. 定义关闭资源的方法
+	1. 聲明靜態數據成員變量
+	2. 創建連接池對象
+	3. 定義公有得到數據源方法
+	4. 定義得到連接對象的方法
+	5. 定義關閉資源的方法
+	6. 重載關閉方法
  */
 public class JDBCUtils {
-	// 1.	声明静态数据源成员变量
+	// 1. 聲明靜態數據成員變量
 	private static DataSource ds;
 
-	// 2. 创建连接池对象
+	// 2. 創建連接池對象
 	static {
-		// 加载配置文件中的数据
+		// 加載配置文件中的數據
 		InputStream is = JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties");
 		Properties pp = new Properties();
 		try {
 			pp.load(is);
-			// 创建连接池，使用配置文件中的参数
+			// 創建連接池，使用配置文件中的參數
 			ds = DruidDataSourceFactory.createDataSource(pp);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -38,17 +39,17 @@ public class JDBCUtils {
 		}
 	}
 
-	// 3. 定义公有的得到数据源的方法
+	// 3. 定義公有得到數據源方法
 	public static DataSource getDataSource() {
 		return ds;
 	}
 
-	// 4. 定义得到连接对象的方法
+	// 4. 定義得到連接對象的方法
 	public static Connection getConnection() throws SQLException {
 		return ds.getConnection();
 	}
 
-	// 5.定义关闭资源的方法
+	// 5. 定義關閉資源的方法
 	public static void close(Connection conn, Statement stmt, ResultSet rs) {
 		if (rs != null) {
 			try {
@@ -69,7 +70,7 @@ public class JDBCUtils {
 		}
 	}
 
-	// 6.重载关闭方法
+	// 6.重載關閉方法
 	public static void close(Connection conn, Statement stmt) {
 		close(conn, stmt, null);
 	}
