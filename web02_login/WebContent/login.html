@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>thirdshop登錄</title>
+    <title>thirdshop登入</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
 
@@ -12,17 +12,17 @@
 	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
     <script>
 		$(function(){
-			// 1.給登錄按鈕綁定事件
+			// 1.給登入按鈕綁定事件
 			$("#btn_sub").click(function(){
 				alert("點囉");
 				// 2.發送ajax請求，提交表單數據
 				$.post("loginServlet", $("#loginForm").serialize(), function(data){
 				    // data(flag:false, errorMsg:'')
 				    if(data.flag){
-				        // 登錄成功
+				        // 登入成功
 				        location.href = "index.html";
 				    }else{
-				        // 登錄失敗
+				        // 登入失敗
 				        $("#errorMsg").html(data.errorMsg);
 				    }
 				});
@@ -45,11 +45,11 @@
     <div class="login-box">
         <div class="title">
             <img src="" >
-            <span>歡迎登錄 thirdshop</span>
+            <span>歡迎登入 thirdshop</span>
         </div>
         <div class="login_inner">
 
-            <!--登錄錯誤提示訊息-->
+            <!--登入錯誤提示訊息-->
             <div id="errorMsg" class="alert alert-danger"></div>
             <form id="loginForm" action="" method="post" accept-charset="utf-8">
                 <input type="hidden" name="action" value="login"/>
@@ -67,10 +67,9 @@
                     </script>
                 </div> 
                 <div class="submit_btn">
-                    <button type="button" id="btn_sub">登錄</button>
+                    <button type="button" id="btn_sub">登入</button>
                     <div class="auto_login">
                         <input type="checkbox" name="" class="checkbox">
-                        <span>自動登錄</span>
                     </div>
                 </div>
             </form>

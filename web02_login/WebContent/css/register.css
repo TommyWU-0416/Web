@@ -15,21 +15,21 @@
 }
 
 .rg_layout .rg_form > .rg_form_left{
-	width:256px;
+	width:214px;
 	float: left;
 	padding-top:20px;
 	padding-left: 20px;
 	box-sizing: border-box;
 }
 .rg_layout .rg_form > .rg_form_center{
-	width:358px;
+	width:480px;
 	float: left;
 	padding-top:10px;
 	box-sizing: border-box;
 	font-size: 14px;
 }
 .rg_layout .rg_form > .rg_form_right{
-	width:256px;
+	width:150px;
 	float: right;
 }
 
