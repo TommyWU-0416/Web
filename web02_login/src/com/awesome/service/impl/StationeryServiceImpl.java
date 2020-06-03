@@ -21,21 +21,9 @@ public class StationeryServiceImpl implements StationeryService {
 	
 	private StationeryDao dao=new StationeryDaoImpl();
 
-	@Override
-	public List<Stationery> select(Stationery Stationery) {
-		StringBuilder sql = new StringBuilder("select * from Stationery where 1=1");
-		
-		List<Object> list = new ArrayList<Object>();
-		
-		if( Stationery != null) {
-			if(Stationery.getStationeryId() != null && Stationery.getStationeryId() != 0) {
-				sql.append(" and Stationeryid=?");
-				list.add(Stationery.getStationeryId());
-			}
-		}
-		return dao.select(sql.toString(), list.toArray());
-	}
-
+	/**
+	 * 使用 stationeryId 去存取 stationery
+	 */
 	@Override
 	public Stationery getStationery(Stationery stationery) {
 		if(stationery.getStationeryId() != null && stationery.getStationeryId() != 0) {

@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import com.awesome.dao.StationeryDao;
 import com.awesome.domain.Stationery;
 import com.awesome.util.BaseDao;
+import com.awesome.util.JDBCUtils;
 
 
 /**
@@ -19,75 +21,30 @@ import com.awesome.util.BaseDao;
 */
 public class StationeryDaoImpl implements StationeryDao {
 
+	QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+	Stationery stationery = new Stationery();
+	/**
+	 * 按照商品編號進行查詢
+	 */
 	@Override
-	public List<Stationery> select(String sql, Object[] arr) {
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+	public Stationery getStationery(Integer StationeryId) {
 		try {
-			con = BaseDao.getCon();
-			ps = con.prepareStatement(sql);
-			if( arr != null) {
-				for (int i = 0; i < arr.length; i++) {
-					ps.setObject(i+1, arr[i]);
-				}
-			}
-			rs = ps.executeQuery();
-			List<Stationery> list = new ArrayList<Stationery>();
-			while(rs.next()) {
-				Stationery stationery = new Stationery();
-				stationery.setStationeryId(rs.getInt("Stationeryid"));
-				stationery.setStationeryName(rs.getString("Stationeryname"));
-				stationery.setPrice(rs.getDouble("price"));
-				stationery.setAuthor(rs.getString("author"));
-				stationery.setPic(rs.getString("pic"));
-				stationery.setPublish(rs.getString("publish"));
-				
-				list.add(stationery);
-			}
+			String sql = "select * from stationery where StationeryId = ?";
+			stationery = queryRunner.query(sql, new BeanHandler<Stationery>(Stationery.class), StationeryId);
 			
-			return list;
-		} catch (ClassNotFoundException e) {
+			System.out.println(stationery.toString());
+			return stationery;
+		} 
+		catch (SQLException e) {
 			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			BaseDao.close(con, ps, rs);
 		}
 		return null;
 	}
-
+	
+	/**
+	 * 保存使用者的購物清單
+	 */
 	@Override
-	public Stationery getStationery(Integer id) {
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		try {
-			con = BaseDao.getCon();
-			String sql = "select * from stationery where StationeryId = ?";
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, id);
-			
-			rs = ps.executeQuery();
-			while(rs.next()) {
-				Stationery stationerys = new Stationery();
-				stationerys.setStationeryId(rs.getInt("StationeryId"));
-				stationerys.setStationeryName(rs.getString("StationeryName"));
-				stationerys.setPrice(rs.getDouble("price"));
-				stationerys.setAuthor(rs.getString("author"));
-				stationerys.setPic(rs.getString("pic"));
-				stationerys.setPublish(rs.getString("publish"));
-				
-				return stationerys;
-			}
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			BaseDao.close(con, ps, rs);
-		}
-		
-		return null;
+	public void savaCart(Stationery stationery) {
 	}
 }

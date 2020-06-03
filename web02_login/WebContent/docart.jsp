@@ -13,7 +13,9 @@
 	<%
 		Stationery stationery = (Stationery) session.getAttribute("Stationery");
 		if( stationery == null){
-			response.sendRedirect("notBuyYet.html");
+			request.getRequestDispatcher("notBuyYet.html").forward(request, response);
+			return ;
+			//response.sendRedirect("/notBuyYet.html");
 		}
 	%>
 	
@@ -31,7 +33,7 @@
 			//2:將購物車裏面的內容遍歷出來
 			double count = 0;//顯示出總價格
 			for (Map.Entry<Integer, CartItem> entry : map.entrySet()) {
-				//計算出每一樣的書籍一共花了多少錢
+				//計算出每一樣的商品一共花了多少錢
 				double price = entry.getValue().getStationery().getPrice() * entry.getValue().getNumber();
 				//計算出一共花了多少錢
 				count = count + price;

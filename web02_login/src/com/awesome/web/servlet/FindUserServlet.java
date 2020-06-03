@@ -20,7 +20,7 @@ public class FindUserServlet extends HttpServlet {
         // 將user寫回客戶端
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=utf-8");
-        mapper.writeValue(response.getOutputStream(),user);
+        mapper.writeValue(response.getOutputStream(), user);
 
 
     }

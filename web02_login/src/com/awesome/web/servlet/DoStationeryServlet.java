@@ -16,21 +16,27 @@ import com.awesome.service.impl.StationeryServiceImpl;
  * Servlet implementation class doStationery
  */
 @WebServlet("/doStationeryServlet")
-public class doStationeryServlet extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class DoStationeryServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		Stationery stationery = new Stationery();
+
+		// 透過獲取商品id，可以知道購物了哪些
 		String sid = request.getParameter("id");
-		System.err.println(sid);
-		Integer id = Integer.parseInt(sid);
+
+		// 調用 service
 		StationeryService service = new StationeryServiceImpl();
-		stationery.setStationeryId(id);
+		stationery.setStationeryId(Integer.parseInt(sid));
 		Stationery stationerys = service.getStationery(stationery);
 
 		request.getSession().setAttribute("Stationery", stationerys);
 		response.sendRedirect("cart.jsp");
-		
+
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

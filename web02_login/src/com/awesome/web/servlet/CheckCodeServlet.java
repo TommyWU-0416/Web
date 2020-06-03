@@ -20,8 +20,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/checkCode")
 public class CheckCodeServlet extends HttpServlet {
-	private int codeY = 0;
-	private int codeX = 0;
 	private static int codeCount = 4;
 	private static StringBuilder sb = new StringBuilder();
 

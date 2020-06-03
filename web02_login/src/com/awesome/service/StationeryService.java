@@ -12,12 +12,6 @@ import com.awesome.domain.Stationery;
 * 類說明
 */
 public interface StationeryService {
-	/**
-	 * 圖書信息查詢方法
-	 * @param Stationery
-	 * @return
-	 */
-	public List<Stationery> select(Stationery Stationery);
 	
 	/**
 	 * 根據id進行查詢
