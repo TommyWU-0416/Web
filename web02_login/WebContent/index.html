@@ -5,11 +5,6 @@
 	
 	<script>
 		$(function () {
-			// 獲取SessionID
-			$.get("getSessionServlet", {}, function (data){
-				alert(data);
-			});
-			
 			
 	        // 查詢用戶信息
 	        $.get("findUserServlet",{},function (data) {
@@ -161,14 +156,42 @@
                 $('#likebar').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
                 duration: 100}, width: '700', height: '310', resizable: false});
             }
-            function addToCartFunction(){
-            	alert("添加到購物車");
+            function addToCartFunction(sidd){
+            	var sid = sidd;
+            	$.get("findUserServlet",{},function (data) {
+            		if(data){
+            			var uid = data.uid;
+                        // 用戶登入了，將購物資訊添加到數據庫
+                        $.get("favoriteServlet", {sid:sid}, function(){
+                        	alert("添加到購物車");
+                            // 手動刷新頁面
+                            location.reload();
+                        });
+
+                    }else{
+                        // 用戶尚未登入
+                        alert("您尚未登入了，請先登入");
+                        location.href="login.html";
+                    }
+            	});
+            }
+            function showCart(){
+            	$.get("findUserServlet",{},function (data) {
+            		if(data){
+	            		var uid = data.uid;
+	            		var url = "doStationeryServlet?uid=" + uid;
+	            		location.href= url;
+            		}else{
+            			alert("您尚未登入了，請先登入");
+                        location.href="login.html";
+            		}
+            	});
             }
 		</script>
 	</head>	
 	<body onload="run()";>
 		<div style="text-align: right; font-size: 36px;">
-			<a href="docart.jsp">我的購物車</a>
+			<button onclick="showCart();">我的購物車</span></button><a href="doStationeryServlet?uid=35"></a>
 		</div>
 		<div align="center" style="background-color:#ffe4b5;">
 			<img src="image/logo.png" width="250" height="100"/>
@@ -266,7 +289,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="1" onclick="addToCartFunction()"><a href="doStationeryServlet?id=1"><img src="image/car.jpg"></a></button>
+                <button id="1" onclick="addToCartFunction(this.id);"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【2H】0.5自動鉛筆芯" id="2H" class="jump">
@@ -284,7 +307,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="2" onclick="addToCartFunction()"><a href="doStationeryServlet?id=2"><img src="image/car.jpg"></a></button>
+                <button id="2" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【3B】0.5自動鉛筆芯" id="3B" class="jump">
@@ -302,7 +325,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="3" onclick="addToCartFunction()"><a href="doStationeryServlet?id=3"><img src="image/car.jpg"></a></button>
+                <button id="3" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【4B】0.5自動鉛筆芯" id="4B" class="jump">
@@ -320,7 +343,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="4" onclick="addToCartFunction()"><a href="doStationeryServlet?id=4"><img src="image/car.jpg"></a></button>
+                <button id="4" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【B】0.5自動鉛筆芯" id="B" class="jump">
@@ -338,7 +361,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="5" onclick="addToCartFunction()"><a href="doStationeryServlet?id=5"><img src="image/car.jpg"></a></button>
+	            <button id="5" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【F】0.5自動鉛筆芯" id="F" class="jump">
@@ -356,7 +379,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="6" onclick="addToCartFunction()"><a href="doStationeryServlet?id=6"><img src="image/car.jpg"></a></button>
+                <button id="6" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【H】0.5自動鉛筆芯" id="H" class="jump">
@@ -374,7 +397,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="7" onclick="addToCartFunction()"><a href="doStationeryServlet?id=7"><img src="image/car.jpg"></a></button>
+                <button id="7" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【HB】0.5自動鉛筆芯" id="HB" class="jump">
@@ -392,7 +415,7 @@
                 </ul>
             </div>
             <div style="float:right;">
-                <button id="8" onclick="addToCartFunction()"><a href="doStationeryServlet?id=8"><img src="image/car.jpg"></a></button>
+	            <button id="8" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
             </div>
         </div>
         <div title="【0.5】自動鉛筆" id="auto" class="jump">

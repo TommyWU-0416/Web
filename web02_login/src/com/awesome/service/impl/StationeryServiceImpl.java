@@ -19,17 +19,22 @@ import com.awesome.service.StationeryService;
 */
 public class StationeryServiceImpl implements StationeryService {
 	
-	private StationeryDao dao=new StationeryDaoImpl();
+	private StationeryDao stationeryDao=new StationeryDaoImpl();
 
 	/**
-	 * 使用 stationeryId 去存取 stationery
+	 * 使用 Sid 去存取 stationery
 	 */
 	@Override
 	public Stationery getStationery(Stationery stationery) {
-		if(stationery.getStationeryId() != null && stationery.getStationeryId() != 0) {
-			return dao.getStationery(stationery.getStationeryId());
+		if(stationery.getSid() != null && stationery.getSid() != 0) {
+			return stationeryDao.getStationery(stationery.getSid());
 		}
 		return null;
 	}
 
+	@Override
+	public List<Stationery> getStationeryList(int uid) {
+		List<Stationery> stationeryList = stationeryDao.getStationeryList(uid);
+		return stationeryList;
+	}
 }

@@ -28,7 +28,7 @@
 
 		//3:考慮如何把商品放到購物車中
 		//3.1:第一考慮購物車中是否有該商品，所以先從購物車中獲取該商品，如果為空，那麽沒有該商品
-		CartItem item = (CartItem) cart.get(stationery.getStationeryId());
+		CartItem item = (CartItem) cart.get(stationery.getSid());
 		if (item == null) {
 			//如果購物車中不存在該商品，那麽創建，且數量默認為1
 			item = new CartItem();
@@ -42,7 +42,7 @@
 		}
 
 		//4:考慮如何把購物車項(即挑選的商品是哪一個和商品的數量)放到購物車中
-		cart.put(stationery.getStationeryId(), item);
+		cart.put(stationery.getSid(), item);
 
 		//5:將購物車放到session中，方便後面取出來
 		session.setAttribute("cart", cart);

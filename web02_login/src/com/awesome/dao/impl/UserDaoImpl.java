@@ -13,7 +13,7 @@ import com.awesome.util.JDBCUtils;
 
 public class UserDaoImpl implements UserDao {
 
-	QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+	private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
 
 	@Override
 	public User findByUsername(String username) {

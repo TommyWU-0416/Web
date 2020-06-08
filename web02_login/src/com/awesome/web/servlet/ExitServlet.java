@@ -18,7 +18,6 @@ public class ExitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 1.銷毀session
         request.getSession().removeAttribute("user");
-        
         // 2.跳轉到登錄頁面
         response.sendRedirect(request.getContextPath()+"/login.html");
     }

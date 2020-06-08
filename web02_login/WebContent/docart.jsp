@@ -11,8 +11,8 @@
 </head>
 <body>
 	<%
-		Stationery stationery = (Stationery) session.getAttribute("Stationery");
-		if( stationery == null){
+	Map<Integer, CartItem> map = (Map<Integer, CartItem>) session.getAttribute("cart");
+		if( map == null){
 			request.getRequestDispatcher("notBuyYet.html").forward(request, response);
 			return ;
 			//response.sendRedirect("/notBuyYet.html");
@@ -29,7 +29,7 @@
 		</tr>
 		<%
 			//1:將添加到購物車裏面的物品顯示出來
-			Map<Integer, CartItem> map = (Map<Integer, CartItem>) session.getAttribute("cart");
+			//Map<Integer, CartItem> map = (Map<Integer, CartItem>) session.getAttribute("cart");
 			//2:將購物車裏面的內容遍歷出來
 			double count = 0;//顯示出總價格
 			for (Map.Entry<Integer, CartItem> entry : map.entrySet()) {

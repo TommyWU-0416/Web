@@ -68,9 +68,12 @@ public class CheckCodeServlet extends HttpServlet {
 
 		// 獲得隨機產生的數字以及字型
 		randomNum(g);
+		
+		// 將驗證碼放入HttpSession中
+		request.getSession().setAttribute("CHECKCODE_SERVER", sb.toString());
 		// 設置干擾線
 		randomLine(g);
-
+		sb.delete(0, 4);
 		// 將內存中的圖片輸出到瀏覽器
 		// 參數一:圖片對象
 		// 參數二:圖片的格式，如PNG, JPG, GIF

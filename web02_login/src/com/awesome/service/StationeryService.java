@@ -18,5 +18,13 @@ public interface StationeryService {
 	 * @param Stationery
 	 * @return
 	 */
-	public Stationery getStationery(Stationery Stationery);
+	public Stationery getStationery(Stationery stationery);
+
+	/**
+	 * 透過使用者 uid 獲取存取的 stationeryList
+	 * @param uid
+	 * @return
+	 */
+	public List<Stationery> getStationeryList(int uid);
+	
 }

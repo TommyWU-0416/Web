@@ -16,12 +16,13 @@ public interface StationeryDao {
 	 * @param id
 	 * @return
 	 */
-	public Stationery getStationery(Integer stationeryid);
+	public Stationery getStationery(int sid);
 	
 	/**
-	 * 保存使用者的購物清單
-	 * @param stationery
+	 * 透過 uid 抓出數據庫的所有文具清單
+	 * @param uid
+	 * @return
 	 */
-	public void savaCart(Stationery stationery);
+	public List<Stationery> getStationeryList(int uid);
 	
 }

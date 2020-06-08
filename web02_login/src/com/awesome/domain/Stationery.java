@@ -9,7 +9,7 @@ public class Stationery implements Serializable {
 
 	// 實體類實現序列化，避免後面出現異常
 	private static final long serialVersionUID = 1L;
-	private Integer stationeryId;
+	private Integer sid;
 	private String stationeryName;
 	private Double price;
 	private String author;
@@ -20,10 +20,10 @@ public class Stationery implements Serializable {
 		super();
 	}
 
-	public Stationery(Integer stationeryId, String stationeryName, Double price, String author, String pic,
+	public Stationery(Integer sid, String stationeryName, Double price, String author, String pic,
 			String publish) {
 		super();
-		this.stationeryId = stationeryId;
+		this.sid = sid;
 		this.stationeryName = stationeryName;
 		this.price = price;
 		this.author = author;
@@ -33,16 +33,16 @@ public class Stationery implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Stationery [stationeryId=" + stationeryId + ", stationeryName=" + stationeryName + ", price=" + price
+		return "Stationery [sid=" + sid + ", stationeryName=" + stationeryName + ", price=" + price
 				+ ", author=" + author + ", pic=" + pic + ", publish=" + publish + "]";
 	}
 
-	public Integer getStationeryId() {
-		return stationeryId;
+	public Integer getSid() {
+		return sid;
 	}
 
-	public void setStationeryId(Integer stationeryId) {
-		this.stationeryId = stationeryId;
+	public void setSid(Integer sid) {
+		this.sid = sid;
 	}
 
 	public String getStationeryName() {
