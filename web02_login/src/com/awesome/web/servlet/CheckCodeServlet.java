@@ -23,7 +23,7 @@ public class CheckCodeServlet extends HttpServlet {
 	private static int codeCount = 4;
 	private static StringBuilder sb = new StringBuilder();
 
-	private static String chs = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static String chs = "0123456789abcdefghjkmnopqrstuvwxyzABCDEFGHJKMNOPQRSTUVWXYZ";
 	private static int[] fontSize = { 16, 18, 20, 22, 24};
 	private static int[] fontStyle = { Font.BOLD, Font.ITALIC, Font.ROMAN_BASELINE };
 	private static String[] fontName = { "幼圓", "微軟雅黑", "新宋體", "方正姚體", "方正舒體", "楷體", "隸書", "黑體" };
@@ -96,7 +96,7 @@ public class CheckCodeServlet extends HttpServlet {
 	 * @param g
 	 */
 	private void randomLine(Graphics g) {
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			g.setColor(randomColor());
 			g.drawLine(random.nextInt(81) + 5, random.nextInt(31) + 5, random.nextInt(81) + 5,
 					random.nextInt(31) + 5);
@@ -146,21 +146,21 @@ public class CheckCodeServlet extends HttpServlet {
 	/**
 	 * 產生4個隨機字符串
 	 */
-	private String getCheckCode() {
-		String base = "0123456789ABCDEFGabcdefg/*-";
-		int size = base.length();
-		Random r = new Random();
-		StringBuffer sb = new StringBuffer();
-		for (int i = 1; i <= 4; i++) {
-			// 產生0到size-1隨機值
-			int index = r.nextInt(size);
-			// 在base字符串中獲取下標為index的字符
-			char c = base.charAt(index);
-			// 將c放入到StringBuffer中
-			sb.append(c);
-		}
-		return sb.toString();
-	}
+//	private String getCheckCode() {
+//		String base = "0123456789ABCDEFGabcdefg/*-";
+//		int size = base.length();
+//		Random r = new Random();
+//		StringBuffer sb = new StringBuffer();
+//		for (int i = 1; i <= 4; i++) {
+//			// 產生0到size-1隨機值
+//			int index = r.nextInt(size);
+//			// 在base字符串中獲取下標為index的字符
+//			char c = base.charAt(index);
+//			// 將c放入到StringBuffer中
+//			sb.append(c);
+//		}
+//		return sb.toString();
+//	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doGet(request, response);

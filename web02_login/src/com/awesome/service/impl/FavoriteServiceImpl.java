@@ -19,8 +19,8 @@ public class FavoriteServiceImpl implements FavoriteService {
 	private FavoriteDao favoriteDao = new FavoriteDaoImpl();
 	
 	@Override
-	public void addFavorite(String sid, int uid) {
-		favoriteDao.addFavorite(Integer.parseInt(sid), uid);
+	public void addFavorite(String sid, int uid, int number) {
+		favoriteDao.addFavorite(Integer.parseInt(sid), uid, number);
 		
 	}
 	

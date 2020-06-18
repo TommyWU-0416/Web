@@ -6,9 +6,10 @@ public interface UserService {
     /**
      * 註冊用戶
      * @param user
+     * @param path 
      * @return
      */
-    boolean regist(User user);
+    boolean regist(User user, String path);
 
     boolean active(String code);
 

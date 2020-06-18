@@ -16,34 +16,59 @@
 	            }else{
             		var msg = "歡迎回來，"+data.name;
 	            	$("#span_username").html(msg);
-	            	$("#exit").html("退出");
+	            	
+	            	document.getElementById("exit").src="image/exit.png";
 	        	}
 	        });
 		});
 	</script>
 	<head>
+
 		<meta charset="utf-8">
 		<title>T.S.</title>
         <link rel="icon" href="image/icon.png" type="image/x-icon" / >
 		<style type=text/css>
-            body{
-                background-image:url("image/back.jpg");
-            }
+			.myMOUSE{ 
+				cursor: pointer; 
+			}
+			body{
+			background-color:#dbdbdb;
+				
+			}
 			table{	
 				text-align:center;
-                border:8px #ff8400 groove;
+                border:0px #ff8320 groove;
                 cellpadding="10";
 			}
 			td{
-				width:200px; 
-				height:200px;
-				border:8px #ff8400 groove;
+
+				border:0px #ff8320 groove;
 			}
-            button{
-                outline:none;
+			strong{
+				color:red;
+				font-size:30px;	
+				font-weight: bold;
+			}
+
+			
+			.tbl{	
+				text-align:left;
+                border:0px #80aeff groove;
+                cellpadding="10";
+				width:670px;
+			}
+			.btn{
+				outline:none;
                 border:none;
                 background-color:white;
-            }
+			}
+			.bn{
+				display:flexbox;
+				width: 30px;
+				font-weight: 320;
+				font-size: 17px;
+				height: 30px;
+			}
             .a{
                 font-weight:bold;
                 color:yellow;
@@ -57,6 +82,38 @@
                 text-align: justify;
                 display: none;
             }
+			.toTop-arrow {
+				width: 3.5rem;
+				height: 3.5rem;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				border-radius: 33%;
+				opacity: 0.6;
+				background: #000;
+				cursor: pointer;
+				position:fixed;
+				right: 1rem;
+				bottom: 1rem;
+				display: none;
+			}
+			.toTop-arrow::before, .toTop-arrow::after {
+				width: 31px;
+				height: 7px;
+				border-radius: 3px;
+				background: #fff;
+				position: absolute;
+				content: "";
+			}
+			.toTop-arrow::before {
+				transform: rotate(-45deg) translate(0, -50%);
+				left: 0.4rem;
+			}
+			.toTop-arrow::after {
+				transform: rotate(45deg) translate(0, -50%);
+				right: 0.4rem;
+			}
+			.toTop-arrow:focus {outline: none;}
 		</style>
 		
 		<script type="text/javascript">
@@ -78,91 +135,97 @@
             }
             function twoB(){
                 $('#2B').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function twoH(){
                 $('#2H').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function threeB(){
                 $('#3B').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function fourB(){
                 $('#4B').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function B(){
                 $('#B').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function F(){
                 $('#F').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function H(){
                 $('#H').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function HB(){
                 $('#HB').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function auto(){
                 $('#auto').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function bkp(){
                 $('#bkp').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function blp(){
                 $('#blp').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function rdp(){
                 $('#rdp').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function bkm(){
                 $('#bkm').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function blm(){
                 $('#blm').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function rm(){
                 $('#rm').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function ruler(){
                 $('#ruler').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function eraser(){
                 $('#eraser').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function like(){
                 $('#like').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function likea(){
                 $('#likea').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
             function likebar(){
                 $('#likebar').dialog({autoOpen: true, show:{effect:'drop', direction:'right',
-                duration: 100}, width: '700', height: '310', resizable: false});
+                duration: 100}, width: '720', height: '320', resizable: false});
             }
-            function addToCartFunction(sidd){
-            	var sid = sidd;
+            function addToCartFunction(sidd, namee){
+            	// 透過 name 獲取數值
+            	var sid = sidd
+            	var name = namee;
+            	var number = document.getElementsByName(name).innerHTML;
+         
+            	//alert(number);
+            	
             	$.get("findUserServlet",{},function (data) {
             		if(data){
             			var uid = data.uid;
                         // 用戶登入了，將購物資訊添加到數據庫
-                        $.get("favoriteServlet", {sid:sid}, function(){
+                        $.get("favoriteServlet", {sid:sid, number:number}, function(){
                         	alert("添加到購物車");
                             // 手動刷新頁面
                             location.reload();
@@ -174,6 +237,9 @@
                         location.href="login.html";
                     }
             	});
+            }
+            function aa(sid, number){
+            	alert(sid + number);
             }
             function showCart(){
             	$.get("findUserServlet",{},function (data) {
@@ -190,432 +256,1506 @@
 		</script>
 	</head>	
 	<body onload="run()";>
-		<div style="text-align: right; font-size: 36px;">
-			<button onclick="showCart();">我的購物車</span></button><a href="doStationeryServlet?uid=35"></a>
+		<div class="myMOUSE" style="background-color:#FFFFFF;" align="center">
+				<img src="image/logo.png" width="250" height="100" style="margin-left:18%;"/>
+				<a href="javascript: void(0)"><img title="購物車" src="image/car.png" onclick="showCart();" align="right"/></a>
+				
+				<!-- <a href="javascript: void(0)"><img src="image/shoplist.png" align="right"/></a> -->
+				
+                <a href="login.html"><img title="登入" src="image/member.png" align="right"/></a>
+                <a href="register.html"><img title="註冊" src="image/add.png" align="right"/></a>
+                
+                <a href="javascript:location.href='exitServlet';" ><img id="exit" src="" align="right"/></a>
 		</div>
-		<div align="center" style="background-color:#ffe4b5;">
-			<img src="image/logo.png" width="250" height="100"/>
-		</div>
-		<div align="right">
-			<!-- 註冊 -->
-			<a href="register.html" class="a" style="text-decoration:none;"><span id="register"></span></a>
-			<span id="slash" class="a" style="text-decoration:none;"></span>
-			<!-- 登入 -->
-			<a href="login.html" class="a" style="text-decoration:none;"><span id="login"></span></a>
-			
+		 
+		<div align="right" style="background-color:#000000;height:30px;">
+			<!-- 註冊 
+			<a href="register.html" class="a" id="re" style="text-decoration:none;"><span id="register"></span></a>
+			<span id="slash" class="a" style="text-decoration:none;"></span>-->
+			<!-- 登入 
+			<a href="login.html" class="a" id="login" style="text-decoration:none;"><span id="login"></span></a>
+			-->
 			<!-- 歡迎 xxx -->
-            <span id="span_username" style="color:yellow;"></span>
-            <!-- 退出 -->
+            <span class="a" id="span_username"></span>
+            <!-- 退出 
             <a href="javascript:location.href='exitServlet';" id="exit"><span id="exit"></span></a>
-            
+            -->
 		</div>
-        <div align="center">
-            <div id="carouselarea" class="carousel slide" data-ride="carousel" style="width:850px;">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselarea" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselarea" data-slide-to="1"></li>
-                    <li data-target="#carouselarea" data-slide-to="2"></li>
-                    <li data-target="#carouselarea" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block" src="image/ad.jpg" alt="Photo1"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block" src="image/ad2.jpg" alt="Photo2"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block" src="image/ad3.jpg" alt="Photo3"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block" src="image/ad4.jpg" alt="Photo4"/>
+        <div align="center" style="background-color:#ffe4b5;">
+            <div style="background-color:#f0f0f0;width:80%;">
+                <div align="center">
+                    <div id="carouselarea" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselarea" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselarea" data-slide-to="1"></li>
+                            <li data-target="#carouselarea" data-slide-to="2"></li>
+                            <li data-target="#carouselarea" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block" src="image/bg.jpg" style="width:100%"/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="image/bg2.jpg" style="width:100%"/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="image/bg3.jpg" style="width:100%"/>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="image/bg4.jpg" style="width:100%"/>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselarea" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"/>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselarea" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"/>
+                        </a>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselarea" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon"/>
-                </a>
-                <a class="carousel-control-next" href="#carouselarea" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon"/>
-                </a>
-            </div>
-        </div>
-        <hr style="width:850px;background-color:yellow;">
-		<div align="center" class="row justify-content-around">
-			<table>
-				<tr>
-					<td><a href="javascript: void(0)" onclick="twoB()"><img src="image/2B.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="twoH()"><img src="image/2H.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="threeB()"><img src="image/3B.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="fourB()"><img src="image/4B.jpg"/></a></td>
-				</tr>
-				<tr>
-					<td><a href="javascript: void(0)" onclick="B()"><img src="image/B.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="F()"><img src="image/F.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="H()"><img src="image/H.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="HB()"><img src="image/HB.jpg"/></a></td>
-				</tr>
-				<tr>
-					<td><a href="javascript: void(0)" onclick="auto()"><img src="image/auto.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="bkp()"><img src="image/bkp.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="blp()"><img src="image/blp.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="rdp()"><img src="image/rdp.jpg"/></a></td>
-				</tr>
-				<tr>
-					<td><a href="javascript: void(0)" onclick="bkm()"><img src="image/bkm.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="blm()"><img src="image/blm.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="rm()"><img src="image/rm.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="ruler()"><img src="image/ruler.jpg"/></a></td>
-				</tr>
-				<tr>
-					<td><a href="javascript: void(0)" onclick="eraser()"><img src="image/eraser.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="like()"><img src="image/like.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="likea()"><img src="image/likea.jpg"/></a></td>
-					<td><a href="javascript: void(0)" onclick="likebar()"><img src="image/likebar.jpg"/></a></td>
-				</tr>
-			</table>
+                <hr style="background-color:black;width:85%;">
+                <div align="center" class="row justify-content-around">
+                    <table width="90%" style="table-layout:fixed">
+                        <tr>
+                            <td>
+                                <a href="javascript: void(0)" onclick="twoB()"><img src="image/2B.jpg" /></a>
+                                <br>
+                                <span>【2B】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$10</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="twoH()"><img src="image/2H.jpg" /></a>
+                                <br>
+                                <span>【2H】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$12</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="threeB()"><img src="image/3B.jpg" /></a>
+                                <br>
+                                <span>【3B】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$11</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="fourB()"><img src="image/4B.jpg" /></a>
+                                <br>
+                                <span>【4B】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$13</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript: void(0)" onclick="B()"><img src="image/B.jpg" /></a>
+                                <br>
+                                <span>【B】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$9</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="F()"><img src="image/F.jpg" /></a>
+                                <br>
+                                <span>【F】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$10</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="H()"><img src="image/H.jpg" /></a>
+                                <br>
+                                <span>【H】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$11</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="HB()"><img src="image/HB.jpg" /></a>
+                                <br>
+                                <span>【HB】0.5自動鉛筆芯</span>
+                                <br>
+                                <strong>$12</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <a href="javascript: void(0)" onclick="auto()"><img src="image/auto.jpg" /></a>
+                            <br>
+                                <span>【0.5】自動鉛筆</span>
+                                <br>
+                                <strong>$15</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="bkp()"><img src="image/bkp.jpg" /></a>
+                                <br>
+                                <span>【黑】原子筆</span>
+                                <br>
+                                <strong>$15</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="blp()"><img src="image/blp.jpg" /></a>
+                                <br>
+                                <span>【藍】原子筆</span>
+                                <br>
+                                <strong>$15</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="rdp()"><img src="image/rdp.jpg" /></a>
+                                <br>
+                                <span>【紅】原子筆</span>
+                                <br>
+                                <strong>$15</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript: void(0)" onclick="bkm()"><img src="image/bkm.jpg" /></a>
+                                <br>
+                                <span>【黑】奇異筆</span>
+                                <br>
+                                <strong>$20</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="blm()"><img src="image/blm.jpg" /></a>
+                                <br>
+                                <span>【藍】奇異筆</span>
+                                <br>
+                                <strong>$20</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="rm()"><img src="image/rm.jpg" /></a>
+                                <br>
+                                <span>【紅】奇異筆</span>
+                                <br>
+                                <strong>$20</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="ruler()"><img src="image/ruler.jpg" /></a>
+                                <br>
+                                <span>【鐵】尺</span>
+                                <br>
+                                <strong>$25</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="javascript: void(0)" onclick="eraser()"><img src="image/eraser.jpg" /></a>
+                                <br>
+                                <span>【標準】橡皮擦</span>
+                                <br>
+                                <strong>$18</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="like()"><img src="image/like.jpg" /></a>
+                                <br>
+                                <span>【智慧型】修正帶</span>
+                                <br>
+                                <strong>$35</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="likea()"><img src="image/likea.jpg" /></a>
+                                <br>
+                                <span>【智慧型】修正內帶</span>
+                                <br>
+                                <strong>$18</strong>
+                            </td>
+                            <td>
+                                <a href="javascript: void(0)" onclick="likebar()"><img src="image/likebar.jpg" /></a>
+                                <br>
+                                <span>【極細】修正液</span>
+                                <br>
+                                <strong>$23</strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div title="【2B】0.5自動鉛筆芯" id="2B" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/2B.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm 2B</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button  class="btn" id="1" name="number2B" onclick="addToCartFunction(this.id, this.name, this.name);"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NT2B"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="down2B" class="bn" type="button">-</button>
+                        <strong id="number2B"></strong>
+                        <button id="up2B" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="total2B"></strong>
+                    </div>
+                    <script>
+                        var NT2B = 10;
+                        var shown2B = 1;
+                        var all2B = 0;
+                        var down2B = document.getElementById("down2B");
+                        var up2B = document.getElementById("up2B");
+                        var number2B = document.getElementById("number2B");
+                        var total2B = document.getElementById("total2B");
+                        document.getElementById("NT2B").innerHTML = NT2B;
+                        number2B.innerHTML = shown2B;
+                        total2B.innerHTML = all2B;
+                       	
+                        down2B.onclick=function(){
+                            if(shown2B > 0){
+                                shown2B--;
+                                all2B = shown2B * NT2B;
+                                number2B.innerHTML = shown2B;
+                                total2B.innerHTML = all2B;
+                            }
+                        	document.getElementsByName("number2B").innerHTML = shown2B;
+                        }
+                        up2B.onclick=function(){
+                            if(shown2B < 20){
+                                shown2B++;
+                                all2B = shown2B * NT2B;
+                                number2B.innerHTML = shown2B;
+                                total2B.innerHTML = all2B;
+                            }
+                            document.getElementsByName("number2B").innerHTML = shown2B;
+                        }
+                        
+                    </script>
+                </div>
+                <div title="【2H】0.5自動鉛筆芯" id="2H" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/2H.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm 2H</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="2" name="number2H" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NT2H"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="down2H" class="bn" type="button">-</button>
+                        <strong id="number2H"></strong>
+                        <button id="up2H" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="total2H"></strong>
+                    </div>
+                    <script>
+                        var NT2H = 12;
+                        var shown2H = 1;
+                        var all2H = 0;
+                        var down2H = document.getElementById("down2H");
+                        var up2H = document.getElementById("up2H");
+                        var number2H = document.getElementById("number2H");
+                        var total2H = document.getElementById("total2H");
+                        document.getElementById("NT2H").innerHTML = NT2H;
+                        number2H.innerHTML = shown2H;
+                        total2H.innerHTML = all2H;
+                        down2H.onclick=function(){
+                            if(shown2H > 0){
+                                shown2H--;
+                                all2H = shown2H * NT2H;
+                                number2H.innerHTML = shown2H;
+                                total2H.innerHTML = all2H;
+                            }
+                            document.getElementsByName("number2H").innerHTML = shown2H;
+                        }
+                        up2H.onclick=function(){
+                            if(shown2H < 20){
+                                shown2H++;
+                                all2H = shown2H * NT2H;
+                                number2H.innerHTML = shown2H;
+                                total2H.innerHTML = all2H;
+                            }
+                            document.getElementsByName("number2H").innerHTML = shown2H;
+                        }
+                    </script>
+                </div>
+                <div title="【3B】0.5自動鉛筆芯" id="3B" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/3B.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm 3B</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="3" name="number3B" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NT3B"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="down3B" class="bn" type="button">-</button>
+                        <strong id="number3B"></strong>
+                        <button id="up3B" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="total3B"></strong>
+                    </div>
+                    <script>
+                        var NT3B = 11;
+                        var shown3B = 1;
+                        var all3B = 0;
+                        var down3B = document.getElementById("down3B");
+                        var up3B = document.getElementById("up3B");
+                        var number3B = document.getElementById("number3B");
+                        var total3B = document.getElementById("total3B");
+                        document.getElementById("NT3B").innerHTML = NT3B;
+                        number3B.innerHTML = shown3B;
+                        total3B.innerHTML = all3B;
+                        down3B.onclick=function(){
+                            if(shown3B > 0){
+                                shown3B--;
+                                all3B = shown3B * NT3B;
+                                number3B.innerHTML = shown3B;
+                                total3B.innerHTML = all3B;
+                            }
+                            document.getElementsByName("number3B").innerHTML = shown3B;
+                        }
+                        up3B.onclick=function(){
+                            if(shown3B < 20){
+                                shown3B++;
+                                all3B = shown3B * NT3B;
+                                number3B.innerHTML = shown3B;
+                                total3B.innerHTML = all3B;
+                            }
+                            document.getElementsByName("number3B").innerHTML = shown3B;
+                        }
+                    </script>
+                </div>
+                <div title="【4B】0.5自動鉛筆芯" id="4B" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/4B.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm 4B</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="4" name="number4B" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NT4B"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="down4B" class="bn" type="button">-</button>
+                        <strong id="number4B"></strong>
+                        <button id="up4B" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="total4B"></strong>
+                    </div>
+                    <script>
+                        var NT4B = 13;
+                        var shown4B = 1;
+                        var all4B = 0;
+                        var down4B = document.getElementById("down4B");
+                        var up4B = document.getElementById("up4B");
+                        var number4B = document.getElementById("number4B");
+                        var total4B = document.getElementById("total4B");
+                        document.getElementById("NT4B").innerHTML = NT4B;
+                        number4B.innerHTML = shown4B;
+                        total4B.innerHTML = all4B;
+                        down4B.onclick=function(){
+                            if(shown4B > 0){
+                                shown4B--;
+                                all4B = shown4B * NT4B;
+                                number4B.innerHTML = shown4B;
+                                total4B.innerHTML = all4B;
+                            }
+                            document.getElementsByName("number4B").innerHTML = shown4B;
+                        }
+                        up4B.onclick=function(){
+                            if(shown4B < 20){
+                                shown4B++;
+                                all4B = shown4B * NT4B;
+                                number4B.innerHTML = shown4B;
+                                total4B.innerHTML = all4B;
+                            }
+                            document.getElementsByName("number4B").innerHTML = shown4B;
+                        }
+                    </script>
+                </div>
+                <div title="【B】0.5自動鉛筆芯" id="B" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/B.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm B</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="5" name="numberB" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTB"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downB" class="bn" type="button">-</button>
+                        <strong id="numberB"></strong>
+                        <button id="upB" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalB"></strong>
+                    </div>
+                    <script>
+                        var NTB = 9;
+                        var shownB = 1;
+                        var allB = 0;
+                        var downB = document.getElementById("downB");
+                        var upB = document.getElementById("upB");
+                        var numberB = document.getElementById("numberB");
+                        var totalB = document.getElementById("totalB");
+                        document.getElementById("NTB").innerHTML = NTB;
+                        numberB.innerHTML = shownB;
+                        totalB.innerHTML = allB;
+                        downB.onclick=function(){
+                            if(shownB > 0){
+                                shownB--;
+                                allB = shownB * NTB;
+                                numberB.innerHTML = shownB;
+                                totalB.innerHTML = allB;
+                            }
+                            document.getElementsByName("numberB").innerHTML = shownB;
+                        }
+                        upB.onclick=function(){
+                            if(shownB < 20){
+                                shownB++;
+                                allB = shownB * NTB;
+                                numberB.innerHTML = shownB;
+                                totalB.innerHTML = allB;
+                            }
+                            document.getElementsByName("numberB").innerHTML = shownB;
+                        }
+                    </script>
+                </div>
+                <div title="【F】0.5自動鉛筆芯" id="F" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/F.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm F</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="6" name="numberF" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTF"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downF" class="bn" type="button">-</button>
+                        <strong id="numberF"></strong>
+                        <button id="upF" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalF"></strong>
+                    </div>
+                    <script>
+                        var NTF = 10;
+                        var shownF = 1;
+                        var allF = 0;
+                        var downF = document.getElementById("downF");
+                        var upF = document.getElementById("upF");
+                        var numberF = document.getElementById("numberF");
+                        var totalF = document.getElementById("totalF");
+                        document.getElementById("NTF").innerHTML = NTF;
+                        numberF.innerHTML = shownF;
+                        totalF.innerHTML = allF;
+                        downF.onclick=function(){
+                            if(shownF > 0){
+                                shownF--;
+                                allF = shownF * NTF;
+                                numberF.innerHTML = shownF;
+                                totalF.innerHTML = allF;
+                            }
+                            document.getElementsByName("numberF").innerHTML = shownF;
+                        }
+                        upF.onclick=function(){
+                            if(shownF < 20){
+                                shownF++;
+                                allF = shownF * NTF;
+                                numberF.innerHTML = shownF;
+                                totalF.innerHTML = allF;
+                            }
+                            document.getElementsByName("numberF").innerHTML = shownF;
+                        }
+                    </script>
+                </div>
+                <div title="【H】0.5自動鉛筆芯" id="H" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/H.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm H</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="7" name="numberH" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTH"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downH" class="bn" type="button">-</button>
+                        <strong id="numberH"></strong>
+                        <button id="upH" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalH"></strong>
+                    </div>
+                    <script>
+                        var NTH = 11;
+                        var shownH = 1;
+                        var allH = 0;
+                        var downH = document.getElementById("downH");
+                        var upH = document.getElementById("upH");
+                        var numberH = document.getElementById("numberH");
+                        var totalH = document.getElementById("totalH");
+                        document.getElementById("NTH").innerHTML = NTH;
+                        numberH.innerHTML = shownH;
+                        totalH.innerHTML = allH;
+                        downH.onclick=function(){
+                            if(shownH > 0){
+                                shownH--;
+                                allH = shownH * NTH;
+                                numberH.innerHTML = shownH;
+                                totalH.innerHTML = allH;
+                            }
+                            document.getElementsByName("numberH").innerHTML = shownH;
+                        }
+                        upH.onclick=function(){
+                            if(shownH < 20){
+                                shownH++;
+                                allH = shownH * NTH;
+                                numberH.innerHTML = shownH;
+                                totalH.innerHTML = allH;
+                            }
+                            document.getElementsByName("numberH").innerHTML = shownH;
+                        }
+                    </script>
+                </div>
+                <div title="【HB】0.5自動鉛筆芯" id="HB" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/HB.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>自動鉛筆筆芯 0.5mm HB</li>
+                                        <li>適用0.5mm自動鉛筆</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                        <li>不會傷到紙面,經濟實惠</li>
+                                        <li>規格齊全使用方便,書寫順暢流利</li>
+                                    </ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="8" name="numberHB" onclick="addToCartFunction(this.id, this.name)"><img src="image/car.jpg"></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTHB"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downHB" class="bn" type="button">-</button>
+                        <strong id="numberHB"></strong>
+                        <button id="upHB" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalHB"></strong>
+                    </div>
+                    <script>
+                        var NTHB = 12;
+                        var shownHB = 1;
+                        var allHB = 0;
+                        var downHB = document.getElementById("downHB");
+                        var upHB = document.getElementById("upHB");
+                        var numberHB = document.getElementById("numberHB");
+                        var totalHB = document.getElementById("totalHB");
+                        document.getElementById("NTHB").innerHTML = NTHB;
+                        numberHB.innerHTML = shownHB;
+                        totalHB.innerHTML = allHB;
+                        downHB.onclick=function(){
+                            if(shownHB > 0){
+                                shownHB--;
+                                allHB = shownHB * NTHB;
+                                numberHB.innerHTML = shownHB;
+                                totalHB.innerHTML = allHB;
+                            }
+                            document.getElementsByName("numberHB").innerHTML = shownHB;
+                        }
+                        upHB.onclick=function(){
+                            if(shownHB < 20){
+                                shownHB++;
+                                allHB = shownHB * NTHB;
+                                numberHB.innerHTML = shownHB;
+                                totalHB.innerHTML = allHB;
+                            }
+                            document.getElementsByName("numberHB").innerHTML = shownHB;
+                        }
+                    </script>
+                </div>
+                <div title="【0.5】自動鉛筆" id="auto" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/auto.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>前桿軟膠材質</li>
+                                        <li>書寫再久也不累</li>
+                                        <li>寬大筆夾設計</li>
+                                        <li>流線造型優雅好看</li> 
+                                        <li>替芯尺寸：0.5mm</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="9" name="numberauto" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTauto"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downauto" class="bn" type="button">-</button>
+                        <strong id="numberauto"></strong>
+                        <button id="upauto" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalauto"></strong>
+                    </div>
+                    <script>
+                        var NTauto = 15;
+                        var shownauto = 1;
+                        var allauto = 0;
+                        var downauto = document.getElementById("downauto");
+                        var upauto = document.getElementById("upauto");
+                        var numberauto = document.getElementById("numberauto");
+                        var totalauto = document.getElementById("totalauto");
+                        document.getElementById("NTauto").innerHTML = NTauto;
+                        numberauto.innerHTML = shownauto;
+                        totalauto.innerHTML = allauto;
+                        downauto.onclick=function(){
+                            if(shownauto > 0){
+                                shownauto--;
+                                allauto = shownauto * NTauto;
+                                numberauto.innerHTML = shownauto;
+                                totalauto.innerHTML = allauto;
+                            }
+                            document.getElementsByName("numberauto").innerHTML = shownauto;
+                        }
+                        upauto.onclick=function(){
+                            if(shownauto < 20){
+                                shownauto++;
+                                allauto = shownauto * NTauto;
+                                numberauto.innerHTML = shownauto;
+                                totalauto.innerHTML = allauto;
+                            }
+                            document.getElementsByName("numberauto").innerHTML = shownauto;
+                        }
+                    </script>
+                </div>
+                <div title="【黑】原子筆" id="bkp" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/bkp.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>辦公室、學生書寫必備品用具</li>
+                                        <li>輕巧好寫讀書</li>
+                                        <li>便宜好攜帶</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="10" name="numberbkp" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTbkp"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downbkp" class="bn" type="button">-</button>
+                        <strong id="numberbkp"></strong>
+                        <button id="upbkp" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalbkp"></strong>
+                    </div>
+                    <script>
+                        var NTbkp = 15;
+                        var shownbkp = 1;
+                        var allbkp = 0;
+                        var downbkp = document.getElementById("downbkp");
+                        var upbkp = document.getElementById("upbkp");
+                        var numberbkp = document.getElementById("numberbkp");
+                        var totalbkp = document.getElementById("totalbkp");
+                        document.getElementById("NTbkp").innerHTML = NTbkp;
+                        numberbkp.innerHTML = shownbkp;
+                        totalbkp.innerHTML = allbkp;
+                        downbkp.onclick=function(){
+                            if(shownbkp > 0){
+                                shownbkp--;
+                                allbkp = shownbkp * NTbkp;
+                                numberbkp.innerHTML = shownbkp;
+                                totalbkp.innerHTML = allbkp;
+                            }
+                            document.getElementsByName("numberbkp").innerHTML = shownbkp;
+                        }
+                        upbkp.onclick=function(){
+                            if(shownbkp < 20){
+                                shownbkp++;
+                                allbkp = shownbkp * NTbkp;
+                                numberbkp.innerHTML = shownbkp;
+                                totalbkp.innerHTML = allbkp;
+                            }
+                            document.getElementsByName("numberbkp").innerHTML = shownbkp;
+                        }
+                    </script>
+                </div>
+                <div title="【藍】原子筆" id="blp" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/blp.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>辦公室、學生書寫必備品用具</li>
+                                        <li>輕巧好寫讀書</li>
+                                        <li>便宜好攜帶</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="11" name="numberblp" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTblp"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downblp" class="bn" type="button">-</button>
+                        <strong id="numberblp"></strong>
+                        <button id="upblp" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalblp"></strong>
+                    </div>
+                    <script>
+                        var NTblp = 15;
+                        var shownblp = 1;
+                        var allblp = 0;
+                        var downblp = document.getElementById("downblp");
+                        var upblp = document.getElementById("upblp");
+                        var numberblp = document.getElementById("numberblp");
+                        var totalblp = document.getElementById("totalblp");
+                        document.getElementById("NTblp").innerHTML = NTblp;
+                        numberblp.innerHTML = shownblp;
+                        totalblp.innerHTML = allblp;
+                        downblp.onclick=function(){
+                            if(shownblp > 0){
+                                shownblp--;
+                                allblp = shownblp * NTblp;
+                                numberblp.innerHTML = shownblp;
+                                totalblp.innerHTML = allblp;
+                            }
+                            document.getElementsByName("numberblp").innerHTML = shownblp;
+                        }
+                        upblp.onclick=function(){
+                            if(shownblp < 20){
+                                shownblp++;
+                                allblp = shownblp * NTblp;
+                                numberblp.innerHTML = shownblp;
+                                totalblp.innerHTML = allblp;
+                            }
+                            document.getElementsByName("numberblp").innerHTML = shownblp;
+                        }
+                    </script>
+                </div>
+                <div title="【紅】原子筆" id="rdp" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/rdp.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>辦公室、學生書寫必備品用具</li>
+                                        <li>輕巧好寫讀書</li>
+                                        <li>便宜好攜帶</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="12" name="numberbdp" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTbdp"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downbdp" class="bn" type="button">-</button>
+                        <strong id="numberbdp"></strong>
+                        <button id="upbdp" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalbdp"></strong>
+                    </div>
+                    <script>
+                        var NTbdp = 15;
+                        var shownbdp = 1;
+                        var allbdp = 0;
+                        var downbdp = document.getElementById("downbdp");
+                        var upbdp = document.getElementById("upbdp");
+                        var numberbdp = document.getElementById("numberbdp");
+                        var totalbdp = document.getElementById("totalbdp");
+                        document.getElementById("NTbdp").innerHTML = NTbdp;
+                        numberbdp.innerHTML = shownbdp;
+                        totalbdp.innerHTML = allbdp;
+                        downbdp.onclick=function(){
+                            if(shownbdp > 0){
+                                shownbdp--;
+                                allbdp = shownblp * NTbdp;
+                                numberbdp.innerHTML = shownbdp;
+                                totalbdp.innerHTML = allbdp;
+                            }
+                            document.getElementsByName("numberbdp").innerHTML = shownbdp;
+                        }
+                        upbdp.onclick=function(){
+                            if(shownbdp < 20){
+                                shownbdp++;
+                                allbdp = shownbdp * NTbdp;
+                                numberbdp.innerHTML = shownbdp;
+                                totalbdp.innerHTML = allbdp;
+                            }
+                            document.getElementsByName("numberbdp").innerHTML = shownbdp;
+                        }
+                    </script>
+                </div>
+                <div title="【黑】奇異筆" id="bkm" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/bkm.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>筆尖1mm</li> 
+                                        <li>油性墨水</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="13" name="numberbkm" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTbkm"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downbkm" class="bn" type="button">-</button>
+                        <strong id="numberbkm"></strong>
+                        <button id="upbkm" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalbkm"></strong>
+                    </div>
+                    <script>
+                        var NTbkm = 20;
+                        var shownbkm = 1;
+                        var allbkm = 0;
+                        var downbkm = document.getElementById("downbkm");
+                        var upbkm = document.getElementById("upbkm");
+                        var numberbkm = document.getElementById("numberbkm");
+                        var totalbkm = document.getElementById("totalbkm");
+                        document.getElementById("NTbkm").innerHTML = NTbkm;
+                        numberbkm.innerHTML = shownbkm;
+                        totalbkm.innerHTML = allbkm;
+                        downbkm.onclick=function(){
+                            if(shownbkm > 0){
+                                shownbkm--;
+                                allbkm = shownbkm * NTbkm;
+                                numberbkm.innerHTML = shownbkm;
+                                totalbkm.innerHTML = allbkm;
+                            }
+                            document.getElementsByName("numberbkm").innerHTML = shownbkm;
+                        }
+                        upbkm.onclick=function(){
+                            if(shownbkm < 20){
+                                shownbkm++;
+                                allbkm = shownbkm * NTbkm;
+                                numberbkm.innerHTML = shownbkm;
+                                totalbkm.innerHTML = allbkm;
+                            }
+                            document.getElementsByName("numberbkm").innerHTML = shownbkm;
+                        }
+                    </script>
+                </div>
+                <div title="【藍】奇異筆" id="blm" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/blm.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>筆尖1mm</li> 
+                                        <li>油性墨水</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="14" name="numberblm" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTblm"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downblm" class="bn" type="button">-</button>
+                        <strong id="numberblm"></strong>
+                        <button id="upblm" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalblm"></strong>
+                    </div>
+                    <script>
+                        var NTblm = 20;
+                        var shownblm = 1;
+                        var allblm = 0;
+                        var downblm = document.getElementById("downblm");
+                        var upblm = document.getElementById("upblm");
+                        var numberblm = document.getElementById("numberblm");
+                        var totalblm = document.getElementById("totalblm");
+                        document.getElementById("NTblm").innerHTML = NTblm;
+                        numberblm.innerHTML = shownblm;
+                        totalblm.innerHTML = allblm;
+                        downblm.onclick=function(){
+                            if(shownblm > 0){
+                                shownblm--;
+                                allblm = shownblm * NTblm;
+                                numberblm.innerHTML = shownblm;
+                                totalblm.innerHTML = allblm;
+                            }
+                            document.getElementsByName("numberblm").innerHTML = shownblm;
+                        }
+                        upblm.onclick=function(){
+                            if(shownblm < 20){
+                                shownblm++;
+                                allblm = shownblm * NTblm;
+                                numberblm.innerHTML = shownblm;
+                                totalblm.innerHTML = allblm;
+                            }
+                            document.getElementsByName("numberblm").innerHTML = shownblm;
+                        }
+                    </script>
+                </div>
+                <div title="【紅】奇異筆" id="rm" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/rm.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>筆尖1mm</li> 
+                                        <li>油性墨水</li>
+                                        <li>適合一般書寫及繪圖</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="15" name="numberrm" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTrm"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downrm" class="bn" type="button">-</button>
+                        <strong id="numberrm"></strong>
+                        <button id="uprm" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalrm"></strong>
+                    </div>
+                    <script>
+                        var NTrm = 20;
+                        var shownrm = 1;
+                        var allrm = 0;
+                        var downrm = document.getElementById("downrm");
+                        var uprm = document.getElementById("uprm");
+                        var numberrm = document.getElementById("numberrm");
+                        var totalrm = document.getElementById("totalrm");
+                        document.getElementById("NTrm").innerHTML = NTrm;
+                        numberrm.innerHTML = shownrm;
+                        totalrm.innerHTML = allrm;
+                        downrm.onclick=function(){
+                            if(shownrm > 0){
+                                shownrm--;
+                                allrm = shownrm * NTrm;
+                                numberrm.innerHTML = shownrm;
+                                totalrm.innerHTML = allrm;
+                            }
+                            document.getElementsByName("numberrm").innerHTML = shownrm;
+                        }
+                        uprm.onclick=function(){
+                            if(shownrm < 20){
+                                shownrm++;
+                                allrm = shownrm * NTrm;
+                                numberrm.innerHTML = shownrm;
+                                totalrm.innerHTML = allrm;
+                            }
+                            document.getElementsByName("numberrm").innerHTML = shownrm;
+                        }
+                    </script>
+                </div>
+                <div title="【鐵】尺" id="ruler" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/ruler.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>測量工具</li>
+                                        <li>15CM</li>
+                                        <li>學生與辦公人士皆適宜</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="16" name="numberruler" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTruler"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downruler" class="bn" type="button">-</button>
+                        <strong id="numberruler"></strong>
+                        <button id="upruler" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totalruler"></strong>
+                    </div>
+                    <script>
+                        var NTruler = 25;
+                        var shownruler = 1;
+                        var allruler = 0;
+                        var downruler = document.getElementById("downruler");
+                        var upruler = document.getElementById("upruler");
+                        var numberruler = document.getElementById("numberruler");
+                        var totalruler = document.getElementById("totalruler");
+                        document.getElementById("NTruler").innerHTML = NTruler;
+                        numberruler.innerHTML = shownruler;
+                        totalruler.innerHTML = allruler;
+                        downruler.onclick=function(){
+                            if(shownruler > 0){
+                                shownruler--;
+                                allruler = shownruler * NTruler;
+                                numberruler.innerHTML = shownruler;
+                                totalruler.innerHTML = allruler;
+                            }
+                            document.getElementsByName("numberruler").innerHTML = shownruler;
+                        }
+                        upruler.onclick=function(){
+                            if(shownruler < 20){
+                                shownruler++;
+                                allruler = shownruler * NTruler;
+                                numberruler.innerHTML = shownruler;
+                                totalruler.innerHTML = allruler;
+                            }
+                            document.getElementsByName("numberruler").innerHTML = shownruler;
+                        }
+                    </script>
+                </div>
+                <div title="【標準】橡皮擦" id="eraser" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/eraser.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>擦拭時屑量少</li>
+                                        <li>可保持桌面乾淨清潔</li>
+                                        <li>擦拭清潔力強 ，不易損耗</li>
+                                        <li>為拭去鉛筆於紙上墨跡的文具</li>
+                                        <li>使用方便，老中少都愛用</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="17" name="numbereraser" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTeraser"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downeraser" class="bn" type="button">-</button>
+                        <strong id="numbereraser"></strong>
+                        <button id="uperaser" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totaleraser"></strong>
+                    </div>
+                    <script>
+                        var NTeraser = 18;
+                        var showneraser = 1;
+                        var alleraser = 0;
+                        var downeraser = document.getElementById("downeraser");
+                        var uperaser = document.getElementById("uperaser");
+                        var numbereraser = document.getElementById("numbereraser");
+                        var totaleraser = document.getElementById("totaleraser");
+                        document.getElementById("NTeraser").innerHTML = NTeraser;
+                        numbereraser.innerHTML = showneraser;
+                        totaleraser.innerHTML = alleraser;
+                        downeraser.onclick=function(){
+                            if(showneraser > 0){
+                                showneraser--;
+                                alleraser = showneraser * NTeraser;
+                                numbereraser.innerHTML = showneraser;
+                                totaleraser.innerHTML = alleraser;
+                            }
+                            document.getElementsByName("numbereraser").innerHTML = showneraser;
+                        }
+                        uperaser.onclick=function(){
+                            if(showneraser < 20){
+                                showneraser++;
+                                alleraser = showneraser * NTeraser;
+                                numbereraser.innerHTML = showneraser;
+                                totaleraser.innerHTML = alleraser;
+                            }
+                            document.getElementsByName("numbereraser").innerHTML = showneraser;
+                        }
+                    </script>
+                </div>
+                <div title="【智慧型】修正帶" id="like" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/like.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>筆型超輕滾輪設計</li>
+                                        <li>修正遮蓋力強</li>
+                                        <li>修改面平坦服貼</li>
+                                        <li>換帶設計</li>
+                                        <li>6mm x 6M</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="18" name="numberlike" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTlike"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downlike" class="bn" type="button">-</button>
+                        <strong id="numberlike"></strong>
+                        <button id="uplike" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totallike"></strong>
+                    </div>
+                    <script>
+                        var NTlike = 35;
+                        var shownlike = 1;
+                        var alllike = 0;
+                        var downlike = document.getElementById("downlike");
+                        var uplike = document.getElementById("uplike");
+                        var numberlike = document.getElementById("numberlike");
+                        var totallike = document.getElementById("totallike");
+                        document.getElementById("NTlike").innerHTML = NTlike;
+                        numberlike.innerHTML = shownlike;
+                        totallike.innerHTML = alllike;
+                        downlike.onclick=function(){
+                            if(shownlike > 0){
+                                shownlike--;
+                                alllike = shownlike * NTlike;
+                                numberlike.innerHTML = shownlike;
+                                totallike.innerHTML = alllike;
+                            }
+                            document.getElementsByName("numberlike").innerHTML = shownlike;
+                        }
+                        uplike.onclick=function(){
+                            if(shownlike < 20){
+                                shownlike++;
+                                alllike = shownlike * NTlike;
+                                numberlike.innerHTML = shownlike;
+                                totallike.innerHTML = alllike;
+                            }
+                            document.getElementsByName("numberlike").innerHTML = shownlike;
+                        }
+                    </script>
+                </div>
+                <div title="【智慧型】修正內帶" id="likea" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/likea.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>修正遮蓋力強</li>
+                                        <li>修改面平坦服貼</li>
+                                        <li>替換用</li>
+                                        <li>6mm x 6M</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="19" name="numberlikea" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTlikea"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downlikea" class="bn" type="button">-</button>
+                        <strong id="numberlikea"></strong>
+                        <button id="uplikea" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totallikea"></strong>
+                    </div>
+                    <script>
+                        var NTlikea = 18;
+                        var shownlikea = 1;
+                        var alllikea = 0;
+                        var downlikea = document.getElementById("downlikea");
+                        var uplikea = document.getElementById("uplikea");
+                        var numberlikea = document.getElementById("numberlikea");
+                        var totallikea = document.getElementById("totallikea");
+                        document.getElementById("NTlikea").innerHTML = NTlikea;
+                        numberlikea.innerHTML = shownlikea;
+                        totallikea.innerHTML = alllikea;
+                        downlikea.onclick=function(){
+                            if(shownlikea > 0){
+                                shownlikea--;
+                                alllikea = shownlikea * NTlikea;
+                                numberlikea.innerHTML = shownlikea;
+                                totallikea.innerHTML = alllikea;
+                            }
+                            document.getElementsByName("numberlikea").innerHTML = shownlikea;
+                        }
+                        uplikea.onclick=function(){
+                            if(shownlikea < 20){
+                                shownlikea++;
+                                alllikea = shownlikea * NTlikea;
+                                numberlikea.innerHTML = shownlikea;
+                                totallikea.innerHTML = alllikea;
+                            }
+                            document.getElementsByName("numberlikea").innerHTML = shownlikea;
+                        }
+                    </script>
+                </div>
+                <div title="【極細】修正液" id="likebar" class="jump">
+                    <table class="tbl">
+                        <tr>
+                            <td>
+                                <div style="float:left;">
+                                    <img src="image/likebar.jpg">
+                                </div>
+                                <div style="float:left;">
+                                    <ul>
+                                        <li>4mm不鏽鋼筆頭</li>
+                                        <li>更準可附著定規畫直線攜帶方便</li>
+                                        <li>特殊鋼針筆頭，適合小面積修正</li>
+                                        <li>修正後表面平順</li>
+                                        <li>可配合尺規做直線條之修正使用</li>
+                                    <ul>
+                                </div>
+                                <div style="float:right;">
+                                    <button class="btn" id="20" name="numberlikebar" onclick="addToCartFunction(this.id, this.name)"><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
+                                </div>
+                            </td>	
+                        </tr>
+                    </table>
+                    <div>
+                        <span style="font-size:25px;">單價:</span>
+                        <strong><span id="NTlikebar"><span></strong>
+                        <span style="font-size:25px;">購買數量:</span>
+                        <button id="downlikebar" class="bn" type="button">-</button>
+                        <strong id="numberlikebar"></strong>
+                        <button id="uplikebar" class="bn" type="button">+</button>
+                        <span style="font-size:25px;">購買金額:</span>
+                        <strong id="totallikebar"></strong>
+                    </div>
+                    <script>
+                        var NTlikebar = 23;
+                        var shownlikebar = 1;
+                        var alllikebar = 0;
+                        var downlikebar = document.getElementById("downlikebar");
+                        var uplikebar = document.getElementById("uplikebar");
+                        var numberlikebar = document.getElementById("numberlikebar");
+                        var totallikebar = document.getElementById("totallikebar");
+                        document.getElementById("NTlikebar").innerHTML = NTlikebar;
+                        numberlikebar.innerHTML = shownlikebar;
+                        totallikebar.innerHTML = alllikebar;
+                        downlikebar.onclick=function(){
+                            if(shownlikebar > 0){
+                                shownlikebar--;
+                                alllikebar = shownlikebar * NTlikebar;
+                                numberlikebar.innerHTML = shownlikebar;
+                                totallikebar.innerHTML = alllikebar;
+                            }
+                            document.getElementsByName("numberlikebar").innerHTML = shownlikebar;
+                        }
+                        uplikebar.onclick=function(){
+                            if(shownlikebar < 20){
+                                shownlikebar++;
+                                alllikebar = shownlikebar * NTlikebar;
+                                numberlikebar.innerHTML = shownlikebar;
+                                totallikebar.innerHTML = alllikebar;
+                            }
+                            document.getElementsByName("numberlikebar").innerHTML = shownlikebar;
+                        }
+                    </script>
+                </div>
+            </div>	
+			<br/>
+			<div>
+				<span>國家/地區:&nbsp;&nbsp;<img src="image/flag.png" height=30/></span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span>多元付款:&nbsp;&nbsp;<img src="image/pay.png" height=30/></span>&nbsp;&nbsp;&nbsp;&nbsp;
+				<span>便利配送:&nbsp;&nbsp;<img src="image/to.png" height=30/></span>
+			</div>
+			<br/>
 		</div>
-        <div title="【2B】0.5自動鉛筆芯" id="2B" class="jump">
-            <div style="float:left;">
-                <img src="image/2B.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm 2B</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="1" onclick="addToCartFunction(this.id);"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【2H】0.5自動鉛筆芯" id="2H" class="jump">
-            <div style="float:left;">
-                <img src="image/2H.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm 2H</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="2" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【3B】0.5自動鉛筆芯" id="3B" class="jump">
-            <div style="float:left;">
-                <img src="image/3B.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm 3B</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="3" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【4B】0.5自動鉛筆芯" id="4B" class="jump">
-            <div style="float:left;">
-                <img src="image/4B.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm 4B</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="4" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【B】0.5自動鉛筆芯" id="B" class="jump">
-            <div style="float:left;">
-                <img src="image/B.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm B</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-	            <button id="5" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【F】0.5自動鉛筆芯" id="F" class="jump">
-            <div style="float:left;">
-                <img src="image/F.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm F</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="6" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【H】0.5自動鉛筆芯" id="H" class="jump">
-            <div style="float:left;">
-                <img src="image/H.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm H</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <button id="7" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【HB】0.5自動鉛筆芯" id="HB" class="jump">
-            <div style="float:left;">
-                <img src="image/HB.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>自動鉛筆筆芯 0.5mm HB</li>
-                    <li>適用0.5mm自動鉛筆</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                    <li>不會傷到紙面,經濟實惠</li>
-                    <li>規格齊全使用方便,書寫順暢流利</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-	            <button id="8" onclick="addToCartFunction(this.id)"><img src="image/car.jpg"></button>
-            </div>
-        </div>
-        <div title="【0.5】自動鉛筆" id="auto" class="jump">
-            <div style="float:left;">
-                <img src="image/auto.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>前桿軟膠材質</li>
-                    <li>書寫再久也不累</li>
-                    <li>寬大筆夾設計</li>
-                    <li>流線造型優雅好看</li> 
-                    <li>替芯尺寸：0.5mm</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【黑】原子筆" id="bkp" class="jump">
-            <div style="float:left;">
-                <img src="image/bkp.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>辦公室、學生書寫必備品用具</li>
-                    <li>輕巧好寫讀書</li>
-                    <li>便宜好攜帶</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【藍】原子筆" id="blp" class="jump">
-            <div style="float:left;">
-                <img src="image/blp.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>辦公室、學生書寫必備品用具</li>
-                    <li>輕巧好寫讀書</li>
-                    <li>便宜好攜帶</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【紅】原子筆" id="rdp" class="jump">
-            <div style="float:left;">
-                <img src="image/rdp.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>辦公室、學生書寫必備品用具</li>
-                    <li>輕巧好寫讀書</li>
-                    <li>便宜好攜帶</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【黑】奇異筆" id="bkm" class="jump">
-            <div style="float:left;">
-                <img src="image/bkm.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>筆尖1mm</li> 
-                    <li>油性墨水</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【藍】奇異筆" id="blm" class="jump">
-            <div style="float:left;">
-                <img src="image/blm.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>筆尖1mm</li> 
-                    <li>油性墨水</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【紅】奇異筆" id="rm" class="jump">
-            <div style="float:left;">
-                <img src="image/rm.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>筆尖1mm</li> 
-                    <li>油性墨水</li>
-                    <li>適合一般書寫及繪圖</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【鐵】尺" id="ruler" class="jump">
-            <div style="float:left;">
-                <img src="image/ruler.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>測量工具</li>
-                    <li>15CM</li>
-                    <li>學生與辦公人士皆適宜</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【標準】橡皮擦" id="eraser" class="jump">
-            <div style="float:left;">
-                <img src="image/eraser.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>擦拭時屑量少</li>
-                    <li>可保持桌面乾淨清潔</li>
-                    <li>擦拭清潔力強 ，不易損耗</li>
-                    <li>為拭去鉛筆於紙上墨跡的文具</li>
-                    <li>使用方便，老中少都愛用</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【智慧型】修正帶" id="like" class="jump">
-            <div style="float:left;">
-                <img src="image/like.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>筆型超輕滾輪設計</li>
-                    <li>修正遮蓋力強</li>
-                    <li>修改面平坦服貼</li>
-                    <li>換帶設計</li>
-                    <li>6mm x 6M</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【智慧型】修正內帶" id="likea" class="jump">
-            <div style="float:left;">
-                <img src="image/likea.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>修正遮蓋力強</li>
-                    <li>修改面平坦服貼</li>
-                    <li>替換用</li>
-                    <li>6mm x 6M</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
-        <div title="【極細】修正液" id="likebar" class="jump">
-            <div style="float:left;">
-                <img src="image/likebar.jpg">
-            </div>
-            <div style="float:left;">
-                <ul>
-                    <li>4mm不鏽鋼筆頭</li>
-                    <li>更準可附著定規畫直線攜帶方便</li>
-                    <li>特殊鋼針筆頭，適合小面積修正</li>
-                    <li>修正後表面平順</li>
-                    <li>可配合尺規做直線條之修正使用</li>
-                <ul>
-            </div>
-            <div style="float:right;">
-                <button><a href="javascript: void(0)"><img src="image/car.jpg"></a></button>
-            </div>
-        </div>
+		<button type="button" id="BackTop" class="toTop-arrow"/>
+		<script>
+			$(function(){
+				$('#BackTop').click(function(){ 
+					$('html,body').animate({scrollTop:0}, 333);
+				});
+				$(window).scroll(function() {
+					if ( $(this).scrollTop() > 300 ){
+						$('#BackTop').fadeIn(222);
+					} else {
+						$('#BackTop').stop().fadeOut(222);
+					}
+				}).scroll();
+			});
+		</script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

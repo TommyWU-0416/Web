@@ -25,9 +25,10 @@ public class FavoriteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 1.獲取 rid
+		// 1.獲取 rid 以及 number
 		String sid = request.getParameter("sid");
-
+		int number = Integer.parseInt(request.getParameter("number"));
+		
 		// 2.判斷是否登入
 		User user = (User) request.getSession().getAttribute("user");
 		int uid;
@@ -40,7 +41,7 @@ public class FavoriteServlet extends HttpServlet {
 		}
 		// 3.調用 service
 		// 添加到數據庫
-		favoriteService.addFavorite(sid, uid);
+		favoriteService.addFavorite(sid, uid, number);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

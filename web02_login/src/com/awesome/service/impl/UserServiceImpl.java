@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public boolean regist(User user) {
+    public boolean regist(User user, String path) {
         // 1.根據用戶名查詢用戶對象
         User u = userDao.findByUsername(user.getUsername());
         // 判斷u是否為null
@@ -34,8 +34,7 @@ public class UserServiceImpl implements UserService {
         userDao.save(user);
 
         // 3.激活郵件發送，郵件正文
-
-        String content = "<a href='http://localhost:8080/web02_login/activeUserServlet?code=" + user.getCode() + "'>點擊激活【thirdshop】</a>";
+        String content = "<a href='http://localhost:8080"+path+"/activeUserServlet?code=" + user.getCode() + "'>點擊激活【thirdshop】</a>";
 
         MailUtils.sendMail(user.getEmail(), content, "激活郵件");
 
@@ -43,7 +42,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 激活用户
+     * 激活用戶
      *
      * @param code
      * @return

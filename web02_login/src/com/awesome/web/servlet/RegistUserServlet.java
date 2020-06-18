@@ -60,7 +60,8 @@ public class RegistUserServlet extends HttpServlet {
         
         // 3.調用service完成註冊
         UserService service = new UserServiceImpl();
-        boolean flag = service.regist(user);
+        String path = request.getContextPath();
+        boolean flag = service.regist(user, path);
         ResultInfo info = new ResultInfo();
         // 4.響應結果
         if(flag){

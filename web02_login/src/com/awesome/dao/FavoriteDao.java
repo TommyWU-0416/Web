@@ -6,6 +6,6 @@ package com.awesome.dao;
 */
 public interface FavoriteDao {
 
-	public void addFavorite(int sid, int uid);
+	public void addFavorite(int sid, int uid, int number);
 
 }

@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>註冊</title>
+	<title>T.S.註冊</title>
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<link rel="stylesheet" href="css/register.css">
-	
+	<link rel="icon" href="image/icon.png" type="image/x-icon" / >
 	<!--導入jquery-->
 	<script src="js/jquery-3.5.1.js"></script>
 	<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+	<style>
+		body{
+			background-color:#ffe4b5;
+		}
+	</style>
 	<script>
 		/*
         表單校驗：
@@ -166,7 +171,7 @@
 							location.href = "register_ok.html";
 						} else {
 							// 註冊失敗
-							alert("fail");
+							alert("註冊失敗");
 							$("#errorMsg").html(data.errorMsg);
 						}
 					});
@@ -190,7 +195,7 @@
 <body>
 <!--引入頭部-->
 <div align="center" style="background-color:#ffe4b5;">
-	<img src="image/logo.png" width="250" height="100"/>
+	<a href="index.html"><img src="image/logo.png" width="250" height="100"/></a>
 </div>
 <div class="rg_layout">
 	<div class="rg_form clearfix">
@@ -247,7 +252,7 @@
 					</tr>
 					<tr>
 						<td class="td_left">
-							<label for="telephone">手機號</label>
+							<label for="telephone">手機號碼</label>
 						</td>
 						<td class="td_right">
 							<input type="text" id="telephone" name="telephone" placeholder="請輸入手機號碼:09xxxxxxxx">

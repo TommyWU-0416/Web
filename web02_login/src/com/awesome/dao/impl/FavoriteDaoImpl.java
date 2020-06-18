@@ -17,10 +17,12 @@ public class FavoriteDaoImpl implements FavoriteDao {
 	private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
 
 	@Override
-	public void addFavorite(int sid, int uid) {
+	public void addFavorite(int sid, int uid, int number) {
 		String sql = "insert into cart values(?, ?, ?)";
 		try {
-			queryRunner.update(sql, sid, new Date(), uid);
+			for (int i = 0; i < number; i++) {
+				queryRunner.update(sql, sid, new Date(), uid);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("can't find");

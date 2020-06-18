@@ -10,8 +10,9 @@ public interface FavoriteService {
 	 * 透過 sid 以及 uid 將購物車內容添加到數據庫
 	 * @param rid
 	 * @param uid
+	 * @param number 
 	 */
-	public void addFavorite(String sid, int uid);
+	public void addFavorite(String sid, int uid, int number);
 
 	
 }

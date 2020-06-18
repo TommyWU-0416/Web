@@ -7,7 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>我的購物車的頁面</title>
+<title>T.S.購物車</title>
+<link rel="icon" href="image/icon.png" type="image/x-icon" / >
+<style>
+	body{
+		background-color:#ffe4b5;
+	}
+</style>
 </head>
 <body>
 	<%

@@ -24,11 +24,11 @@ public class ActiveUserServlet extends HttpServlet {
             // 3.判斷，之後要做記號
             String msg = null;
             if(flag){
-                // 激活成功
-                msg = "激活成功，請<a href='login.html'>登錄</a>";
+                // 註冊成功
+                msg = "註冊成功，請<a href='login.html'>登入</a>";
             }else{
-                // 激活失败
-                msg = "激活失敗，請聯繫管理員!";
+                // 註冊失败
+                msg = "註冊失敗，請聯繫管理員!";
             }
             response.setContentType("text/html;charset=utf-8");
             response.getWriter().write(msg);
